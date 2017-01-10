@@ -15,7 +15,7 @@ class AuthView: UIRxView {
   @IBOutlet weak var loginButton: UIButton!
   
  	func setup(with viewModel: AuthViewModel) {
-    //subscription
+    //Подписываемся на данные
     self.observeAction(viewModel.observeData(), onNext: { data in
       switch(data) {
       case .Username(let text):
@@ -27,27 +27,49 @@ class AuthView: UIRxView {
       }
     })
     
-    //input binding
-    //username
+    //Шлем команды (вполне спокойно можно и через привычные @IBAction/Delegates это все делать
     self.bindControlProperty(
       controlProperty: self.username?.rx.text,
       withFabric: { .ChangeData(AuthViewModel.DataType.Username($0 ?? "")) },
       toAction: viewModel.accept)
-    //password
     self.bindControlProperty(
       controlProperty: self.password?.rx.text,
       withFabric: { .ChangeData(AuthViewModel.DataType.Password($0 ?? "")) },
       toAction: viewModel.accept)
-    
-    //Login button
     self.bindControlEvent(
       controlEvent: self.loginButton?.rx.controlEvent(UIControlEvents.touchUpInside),
       withFabric: { AuthViewModel.Action.SignIn },
       toAction: viewModel.accept)    
     
+    //Если целиком идти по пути RxCocoa - можно привязываться к состоянию вот так (т.е. каждая view самостоятельно следит за состоянием):
+    /*
     if let button = self.loginButton {
       viewModel.observeState().map({ $0.canLogin }).bindTo(button.rx.isEnabled).addDisposableTo(self.disposeBag)
-    }
-    
+    }*/
+    //Либо также как с данными - один метод с состоянием на входе
+    self.observeAction(viewModel.observeState(), onNext: {
+      state -> Void in
+      
+      self.loginButton.isEnabled = state.canLogin
+      switch(state) {
+      case .Loading:
+        //show progress?
+        break
+      case .Error(let error):
+        //hide progress
+        //show error
+        break
+      case .Initial:
+        //show "no data"
+        break
+      case .Success:
+        //hide progress, nothing on view level - route on another vc
+        break
+      case .ValidationChanged(let flags):
+        self.username?.textColor = flags.contains(.Username) ? UIColor.black : UIColor.red
+        self.password?.textColor = flags.contains(.Password) ? UIColor.black : UIColor.red
+        break
+      }
+    })
   }
 }

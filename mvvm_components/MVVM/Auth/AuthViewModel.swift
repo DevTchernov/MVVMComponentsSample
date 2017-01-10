@@ -24,7 +24,6 @@ class AuthViewModel: RxViewModel {
     static let Password = DataValidationFlags(rawValue: 2)
     static let Valid: DataValidationFlags = [.Username, .Password]
   }
-
   
   enum State {
     case Initial
@@ -60,6 +59,7 @@ class AuthViewModel: RxViewModel {
       self.currentState.value = .ValidationChanged(self.currentValidation)
     }
   }
+  
   //MARK: - Observables
   func observeData() -> Observable<DataType> { //Если хотим менять значения извне
     return Observable.of(
