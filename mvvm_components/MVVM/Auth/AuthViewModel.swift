@@ -13,8 +13,8 @@ import RxCocoa
 class AuthViewModel: RxViewModel {
   //MARK: - Enums
   enum DataType {
-    case Username(String)
-    case Password(String)
+    case Username(String?)
+    case Password(String?)
   }
   
   struct DataValidationFlags: OptionSet {
@@ -74,22 +74,20 @@ class AuthViewModel: RxViewModel {
   //MARK: - Commands
   func accept(action: Action) {
     switch(action) {
-    case .SignIn, .SignUp:
-      //self.currentState.value = .Loading
-      //send commands to auth service
-      //...
-      //...
+    case .SignIn:
+      self.currentState.value = .Loading
+      self.loginAction()
       break
     case .ChangeData(let dataType):
       let valid = dataIsValid(data: dataType)
       var validationFlag = DataValidationFlags.NonValid
       switch (dataType) {
       case .Username(let text):
-        self.currentUsername.value = text
+        self.currentUsername.value = text ?? ""
         validationFlag = .Username
         break
       case .Password(let text):
-        self.currentPassword.value = text
+        self.currentPassword.value = text ?? ""
         validationFlag = .Password
         break
       }
@@ -99,7 +97,9 @@ class AuthViewModel: RxViewModel {
       } else {
         self.currentValidation.remove(validationFlag)
       }
-      
+      break
+    case .SignUp:
+      //unsupported
       break
     }
   }
@@ -108,9 +108,24 @@ class AuthViewModel: RxViewModel {
   func dataIsValid(data: DataType) -> Bool {
     switch (data) {
     case .Password(let text):
-        return text.characters.count > 7
+        return (text?.characters.count ?? 0) > 7
     case .Username(let text):
-        return text.characters.count > 11
+        return (text?.characters.count ?? 0) > 11
     }
+  }
+  
+  //MARK: - Service methods
+  func loginAction() {
+    let username = self.currentUsername.value 
+    let password = self.currentPassword.value
+    self.observeLoading(
+      ServiceContainer.instance.authService.login(withUser: username, andPassword: password),
+      onNext: nil,
+      onError: { error in
+        self.currentState.value = .Error(error)
+      },
+      onCompleted: {
+        self.currentState.value = .Success
+      })
   }
 }

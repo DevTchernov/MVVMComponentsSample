@@ -1,16 +1,22 @@
 PODS:
+  - IRDSwiftCoreModule (1.0.0)
+  - MBProgressHUD (1.0.0)
   - RxCocoa (3.1.0):
     - RxSwift (~> 3.1)
   - RxSwift (3.1.0)
 
 DEPENDENCIES:
+  - IRDSwiftCoreModule
+  - MBProgressHUD
   - RxCocoa
   - RxSwift
 
 SPEC CHECKSUMS:
+  IRDSwiftCoreModule: afebf67c6496025095d98a259707ee979dd748d0
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
 
-PODFILE CHECKSUM: fa3ae620e39f5a689feea74642863cdf935600ba
+PODFILE CHECKSUM: 6e39fabc7825acb45683d97b6c94776fd8be6ed3
 
 COCOAPODS: 1.1.1

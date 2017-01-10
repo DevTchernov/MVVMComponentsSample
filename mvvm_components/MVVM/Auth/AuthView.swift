@@ -30,26 +30,27 @@ class AuthView: UIRxView {
     //Шлем команды (вполне спокойно можно и через привычные @IBAction/Delegates это все делать
     self.bindControlProperty(
       controlProperty: self.username?.rx.text,
-      withFabric: { .ChangeData(AuthViewModel.DataType.Username($0 ?? "")) },
+      withFabric: { .ChangeData(AuthViewModel.DataType.Username($0)) },
       toAction: viewModel.accept)
     self.bindControlProperty(
       controlProperty: self.password?.rx.text,
-      withFabric: { .ChangeData(AuthViewModel.DataType.Password($0 ?? "")) },
+      withFabric: { .ChangeData(AuthViewModel.DataType.Password($0)) },
       toAction: viewModel.accept)
     self.bindControlEvent(
       controlEvent: self.loginButton?.rx.controlEvent(UIControlEvents.touchUpInside),
-      withFabric: { AuthViewModel.Action.SignIn },
+      withFabric: { .SignIn },
       toAction: viewModel.accept)    
     
-    //Если целиком идти по пути RxCocoa - можно привязываться к состоянию вот так (т.е. каждая view самостоятельно следит за состоянием):
+    //Если дальше идти по рекомендованному пути RxCocoa - можно привязываться к состоянию вот так (т.е. каждая view самостоятельно следит за состоянием):
     /*
     if let button = self.loginButton {
       viewModel.observeState().map({ $0.canLogin }).bindTo(button.rx.isEnabled).addDisposableTo(self.disposeBag)
     }*/
+    
     //Либо также как с данными - один метод с состоянием на входе
     self.observeAction(viewModel.observeState(), onNext: {
       state -> Void in
-      
+      print(state)
       self.loginButton.isEnabled = state.canLogin
       switch(state) {
       case .Loading:

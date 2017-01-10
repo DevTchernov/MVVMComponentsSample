@@ -23,6 +23,9 @@
 		A9FA894F1E24BDDC008B57DF /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA894E1E24BDDC008B57DF /* AuthViewModel.swift */; };
 		A9FA89511E24D305008B57DF /* UIRxView+Bindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA89501E24D305008B57DF /* UIRxView+Bindings.swift */; };
 		A9FA89531E24DA7B008B57DF /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA89521E24DA7B008B57DF /* AuthView.swift */; };
+		A9FA89561E24F2EA008B57DF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA89551E24F2EA008B57DF /* AuthService.swift */; };
+		A9FA89581E24F63D008B57DF /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA89571E24F63D008B57DF /* ServiceContainer.swift */; };
+		A9FA895B1E25060F008B57DF /* UIViewController+Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA895A1E25060F008B57DF /* UIViewController+Activities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		A9FA894E1E24BDDC008B57DF /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthViewModel.swift; path = MVVM/Auth/AuthViewModel.swift; sourceTree = "<group>"; };
 		A9FA89501E24D305008B57DF /* UIRxView+Bindings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIRxView+Bindings.swift"; path = "Extensions/Reactive/MVVM/UIRxView+Bindings.swift"; sourceTree = "<group>"; };
 		A9FA89521E24DA7B008B57DF /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthView.swift; path = MVVM/Auth/AuthView.swift; sourceTree = "<group>"; };
+		A9FA89551E24F2EA008B57DF /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = Services/AuthService.swift; sourceTree = "<group>"; };
+		A9FA89571E24F63D008B57DF /* ServiceContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceContainer.swift; path = Services/ServiceContainer.swift; sourceTree = "<group>"; };
+		A9FA895A1E25060F008B57DF /* UIViewController+Activities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Activities.swift"; sourceTree = "<group>"; };
 		C6405E81FE471378B28C505B /* Pods-mvvm_components.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm_components.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm_components/Pods-mvvm_components.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +87,7 @@
 		A9A7FBD91E23B99B00FA9405 /* mvvm_components */ = {
 			isa = PBXGroup;
 			children = (
+				A9FA89541E24F2D5008B57DF /* Services */,
 				A9FA89431E24BBCB008B57DF /* MVVM */,
 				A9FA89361E24B8E3008B57DF /* Extensions */,
 				A9A7FBDA1E23B99B00FA9405 /* AppDelegate.swift */,
@@ -96,6 +103,7 @@
 		A9FA89361E24B8E3008B57DF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A9FA89591E2505FB008B57DF /* ViewController */,
 				A9FA89371E24B8F1008B57DF /* Reactive */,
 			);
 			name = Extensions;
@@ -139,6 +147,23 @@
 				A9FA89521E24DA7B008B57DF /* AuthView.swift */,
 			);
 			name = Auth;
+			sourceTree = "<group>";
+		};
+		A9FA89541E24F2D5008B57DF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A9FA89551E24F2EA008B57DF /* AuthService.swift */,
+				A9FA89571E24F63D008B57DF /* ServiceContainer.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		A9FA89591E2505FB008B57DF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A9FA895A1E25060F008B57DF /* UIViewController+Activities.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		CF639BB6E4B5357112C50F45 /* Pods */ = {
@@ -287,8 +312,11 @@
 				A9FA893D1E24B9F5008B57DF /* Disposables.swift in Sources */,
 				A9FA89411E24BB5B008B57DF /* UIView+Rx.swift in Sources */,
 				A9FA893B1E24B975008B57DF /* UIViewController+Rx.swift in Sources */,
+				A9FA89561E24F2EA008B57DF /* AuthService.swift in Sources */,
 				A9FA89451E24BBE9008B57DF /* Component.swift in Sources */,
 				A9FA893F1E24BAA7008B57DF /* UIRxComponentsViewController.swift in Sources */,
+				A9FA895B1E25060F008B57DF /* UIViewController+Activities.swift in Sources */,
+				A9FA89581E24F63D008B57DF /* ServiceContainer.swift in Sources */,
 				A9FA89471E24BC27008B57DF /* RxViewModel.swift in Sources */,
 				A9A7FBDB1E23B99B00FA9405 /* AppDelegate.swift in Sources */,
 				A9FA89511E24D305008B57DF /* UIRxView+Bindings.swift in Sources */,

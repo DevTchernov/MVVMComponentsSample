@@ -12,13 +12,29 @@ import RxCocoa
 
 class ViewController: UIRxComponentsViewController {
 
+  @IBOutlet var authComponent: AuthComponent!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    self.observeAction(
+      authComponent.observeState(),
+      onNext: { state in
+        switch (state) {
+        case .Loading:
+          self.showProgress()
+          break
+        case .Success:
+          self.hideProgress()
+          break
+        case .Error(let error):
+          self.hideProgress()
+          self.showError(error)
+          break
+        default:
+          break
+        }
+    }, onError: nil, onCompleted: nil)
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+  
 }

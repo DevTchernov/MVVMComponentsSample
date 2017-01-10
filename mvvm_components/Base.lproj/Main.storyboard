@@ -79,6 +79,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authComponent" destination="z3t-U6-vlD" id="iGt-cJ-R9y"/>
                         <outletCollection property="components" destination="z3t-U6-vlD" collectionClass="NSMutableArray" id="KfY-H6-4TX"/>
                     </connections>
                 </viewController>
