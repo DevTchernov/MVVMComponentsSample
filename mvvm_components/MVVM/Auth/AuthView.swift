@@ -43,6 +43,11 @@ class AuthView: UIRxView {
     self.bindControlEvent(
       controlEvent: self.loginButton?.rx.controlEvent(UIControlEvents.touchUpInside),
       withFabric: { AuthViewModel.Action.SignIn },
-      toAction: viewModel.accept)
+      toAction: viewModel.accept)    
+    
+    if let button = self.loginButton {
+      viewModel.observeState().map({ $0.canLogin }).bindTo(button.rx.isEnabled).addDisposableTo(self.disposeBag)
+    }
+    
   }
 }

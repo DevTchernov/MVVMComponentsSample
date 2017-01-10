@@ -22,9 +22,3 @@ class ViewController: UIRxComponentsViewController {
     // Dispose of any resources that can be recreated.
   }
 }
-
-class MYAuthVC: UIRxComponentsViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()		
-  }
-}

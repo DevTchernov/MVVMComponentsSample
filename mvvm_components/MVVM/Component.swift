@@ -9,5 +9,5 @@
 import Foundation
 
 @objc protocol MVVMComponent {
-  func setup()
+  func setup() //Чтобы хоть что-то было
 }

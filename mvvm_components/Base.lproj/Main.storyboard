@@ -25,7 +25,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rYH-EO-9Vw" customClass="AuthView" customModule="mvvm_components" customModuleProvider="target">
                                 <rect key="frame" x="16" y="20" width="343" height="293"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEJ-iI-ORZ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEJ-iI-ORZ">
                                         <rect key="frame" x="8" y="8" width="327" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ldg-Dw-sE3"/>
@@ -34,7 +34,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KW1-Z2-lm5">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KW1-Z2-lm5">
                                         <rect key="frame" x="8" y="46" width="327" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="BLg-dj-1dW"/>
@@ -43,18 +43,29 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrZ-7R-fkV">
+                                        <rect key="frame" x="142" y="84" width="58" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="kLu-8n-QCI"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <state key="normal" title="Login"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="293" id="7H0-03-Pyq"/>
                                     <constraint firstAttribute="trailing" secondItem="KW1-Z2-lm5" secondAttribute="trailing" constant="8" id="8fK-Zv-hcg"/>
                                     <constraint firstItem="tEJ-iI-ORZ" firstAttribute="leading" secondItem="rYH-EO-9Vw" secondAttribute="leading" constant="8" id="DSd-zK-7Oz"/>
+                                    <constraint firstItem="UrZ-7R-fkV" firstAttribute="top" secondItem="KW1-Z2-lm5" secondAttribute="bottom" constant="8" id="IIU-c1-3dJ"/>
                                     <constraint firstItem="KW1-Z2-lm5" firstAttribute="top" secondItem="tEJ-iI-ORZ" secondAttribute="bottom" constant="8" id="JUt-GX-v6d"/>
                                     <constraint firstItem="KW1-Z2-lm5" firstAttribute="leading" secondItem="rYH-EO-9Vw" secondAttribute="leading" constant="8" id="Jq1-sF-PHg"/>
+                                    <constraint firstItem="UrZ-7R-fkV" firstAttribute="centerX" secondItem="rYH-EO-9Vw" secondAttribute="centerX" id="OsY-LG-5Me"/>
                                     <constraint firstItem="tEJ-iI-ORZ" firstAttribute="top" secondItem="rYH-EO-9Vw" secondAttribute="top" constant="8" id="PSg-gi-QCg"/>
                                     <constraint firstAttribute="trailing" secondItem="tEJ-iI-ORZ" secondAttribute="trailing" constant="8" id="WvK-Bj-LG9"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="loginButton" destination="UrZ-7R-fkV" id="l39-tv-31P"/>
                                     <outlet property="password" destination="KW1-Z2-lm5" id="yIJ-YU-Yfc"/>
                                     <outlet property="username" destination="tEJ-iI-ORZ" id="icO-Ew-se0"/>
                                 </connections>

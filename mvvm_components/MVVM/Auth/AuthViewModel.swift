@@ -16,13 +16,33 @@ class AuthViewModel: RxViewModel {
     case Username(String)
     case Password(String)
   }
+  
+  struct DataValidationFlags: OptionSet {
+    let rawValue: Int
+    static let NonValid = DataValidationFlags(rawValue: 0)
+    static let Username = DataValidationFlags(rawValue: 1)
+    static let Password = DataValidationFlags(rawValue: 2)
+    static let Valid: DataValidationFlags = [.Username, .Password]
+  }
+
+  
   enum State {
     case Initial
-    case InvalidInput(DataType)
-    case ValidInput(DataType)
+    case ValidationChanged(DataValidationFlags)
     case Error(Error)
     case Success
     case Loading
+    
+    var canLogin:Bool {
+      get {
+        switch(self) {
+        case .ValidationChanged(let flags):
+          return flags == .Valid
+        default:
+          return false
+        }
+      }
+    }
   }
   
   enum Action {
@@ -31,13 +51,17 @@ class AuthViewModel: RxViewModel {
     case SignUp
   }
   
-  //MARK: - Variables
+  //MARK: - Private
   private var currentUsername = Variable<String>("")
   private var currentPassword = Variable<String>("")
   private var currentState = Variable<State>(.Initial)
-  
+  private var currentValidation: DataValidationFlags = .NonValid {
+    didSet {
+      self.currentState.value = .ValidationChanged(self.currentValidation)
+    }
+  }
   //MARK: - Observables
-  func observeData() -> Observable<DataType> {
+  func observeData() -> Observable<DataType> { //Если хотим менять значения извне
     return Observable.of(
       currentUsername.asObservable().map{ DataType.Username($0) },
       currentPassword.asObservable().map{ DataType.Password($0) }).merge()
@@ -51,21 +75,42 @@ class AuthViewModel: RxViewModel {
   func accept(action: Action) {
     switch(action) {
     case .SignIn, .SignUp:
-      //run services methods
-      self.currentState.value = .Loading
+      //self.currentState.value = .Loading
       //send commands to auth service
-      
+      //...
+      //...
       break
     case .ChangeData(let dataType):
+      let valid = dataIsValid(data: dataType)
+      var validationFlag = DataValidationFlags.NonValid
       switch (dataType) {
-      case .Password(let text):
-        self.currentPassword.value = text
-        break
       case .Username(let text):
         self.currentUsername.value = text
+        validationFlag = .Username
+        break
+      case .Password(let text):
+        self.currentPassword.value = text
+        validationFlag = .Password
         break
       }
+      
+      if valid {
+        self.currentValidation.insert(validationFlag)
+      } else {
+        self.currentValidation.remove(validationFlag)
+      }
+      
       break
+    }
+  }
+  
+  //MARK: - Validation
+  func dataIsValid(data: DataType) -> Bool {
+    switch (data) {
+    case .Password(let text):
+        return text.characters.count > 7
+    case .Username(let text):
+        return text.characters.count > 11
     }
   }
 }
