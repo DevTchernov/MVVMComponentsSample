@@ -9,11 +9,18 @@
 import Foundation
 import RxSwift
 
-class AuthComponent: NSObject, MVVMComponent {
+class AuthComponent: MVVMComponent {
+  
+  @IBOutlet weak var username: UITextField!
+  @IBOutlet weak var password: UITextField!
+  @IBOutlet weak var loginButton: UIButton!
+  
   @IBOutlet weak var authView: AuthView!
   let viewModel = AuthViewModel()
-  func setup() {
+  override func setup() {
+    
     self.authView?.setup(with: viewModel)
+    
   }
   
   func observeState() -> Observable<AuthViewModel.State> {

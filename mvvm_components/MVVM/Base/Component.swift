@@ -7,7 +7,19 @@
 //
 
 import Foundation
+import RxSwift
 
-@objc protocol MVVMComponent {
-  func setup() //Чтобы хоть что-то было
+class MVVMComponent: NSObject {
+  /*
+   override it
+   */
+  func setup() {
+  }
+}
+
+class MVVMRxComponent: MVVMComponent, DisposableContainer {
+  var disposeBag:DisposeBag! = DisposeBag()
+  deinit {
+    disposeBag = nil
+  }
 }
