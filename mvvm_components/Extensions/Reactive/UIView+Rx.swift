@@ -11,10 +11,6 @@ import RxSwift
 
 class UIRxView: UIView, DisposableContainer {
   
-  func observeAction<T>( _ observable: Observable<T>, onNext: ((T) -> Void)? = nil, onError: ( (Error) -> Void)? = nil, onCompleted: (() -> Void)? = nil ) {
-    observe(observable, onScheduler: MainScheduler.instance, onNext: onNext, onError: onError, onCompleted: onCompleted)
-  }
-  
   var disposeBag:DisposeBag! = DisposeBag()
   deinit {
     self.disposeBag = nil

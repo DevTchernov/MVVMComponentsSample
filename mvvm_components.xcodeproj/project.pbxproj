@@ -22,7 +22,6 @@
 		A9FA894D1E24BD24008B57DF /* AuthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA894C1E24BD24008B57DF /* AuthComponent.swift */; };
 		A9FA894F1E24BDDC008B57DF /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA894E1E24BDDC008B57DF /* AuthViewModel.swift */; };
 		A9FA89511E24D305008B57DF /* UIRxView+Bindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA89501E24D305008B57DF /* UIRxView+Bindings.swift */; };
-		A9FA89531E24DA7B008B57DF /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA89521E24DA7B008B57DF /* AuthView.swift */; };
 		A9FA89561E24F2EA008B57DF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA89551E24F2EA008B57DF /* AuthService.swift */; };
 		A9FA89581E24F63D008B57DF /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA89571E24F63D008B57DF /* ServiceContainer.swift */; };
 		A9FA895B1E25060F008B57DF /* UIViewController+Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA895A1E25060F008B57DF /* UIViewController+Activities.swift */; };
@@ -47,7 +46,6 @@
 		A9FA894C1E24BD24008B57DF /* AuthComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthComponent.swift; sourceTree = "<group>"; };
 		A9FA894E1E24BDDC008B57DF /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		A9FA89501E24D305008B57DF /* UIRxView+Bindings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRxView+Bindings.swift"; sourceTree = "<group>"; };
-		A9FA89521E24DA7B008B57DF /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A9FA89551E24F2EA008B57DF /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A9FA89571E24F63D008B57DF /* ServiceContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
 		A9FA895A1E25060F008B57DF /* UIViewController+Activities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Activities.swift"; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				A9FA894C1E24BD24008B57DF /* AuthComponent.swift */,
-				A9FA89521E24DA7B008B57DF /* AuthView.swift */,
 				A9FA894E1E24BDDC008B57DF /* AuthViewModel.swift */,
 			);
 			path = Auth;
@@ -316,7 +313,6 @@
 			files = (
 				A9FA894F1E24BDDC008B57DF /* AuthViewModel.swift in Sources */,
 				A9A7FBDD1E23B99B00FA9405 /* ViewController.swift in Sources */,
-				A9FA89531E24DA7B008B57DF /* AuthView.swift in Sources */,
 				A9FA893D1E24B9F5008B57DF /* Disposables.swift in Sources */,
 				A9FA89411E24BB5B008B57DF /* UIView+Rx.swift in Sources */,
 				A9FA893B1E24B975008B57DF /* UIViewController+Rx.swift in Sources */,
