@@ -38,18 +38,18 @@
 		A9A7FBE11E23B99B00FA9405 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9A7FBE41E23B99B00FA9405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9A7FBE61E23B99B00FA9405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9FA893A1E24B975008B57DF /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Rx.swift"; path = "mvvm_components/Extensions/Reactive/UIViewController+Rx.swift"; sourceTree = SOURCE_ROOT; };
-		A9FA893C1E24B9F5008B57DF /* Disposables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Disposables.swift; path = Extensions/Reactive/Disposables.swift; sourceTree = "<group>"; };
-		A9FA893E1E24BAA7008B57DF /* UIRxComponentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIRxComponentsViewController.swift; path = Extensions/Reactive/MVVM/UIRxComponentsViewController.swift; sourceTree = "<group>"; };
-		A9FA89401E24BB5B008B57DF /* UIView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Rx.swift"; path = "Extensions/Reactive/UIView+Rx.swift"; sourceTree = "<group>"; };
-		A9FA89441E24BBE9008B57DF /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Component.swift; path = MVVM/Component.swift; sourceTree = "<group>"; };
-		A9FA89461E24BC27008B57DF /* RxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxViewModel.swift; path = MVVM/RxViewModel.swift; sourceTree = "<group>"; };
-		A9FA894C1E24BD24008B57DF /* AuthComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthComponent.swift; path = MVVM/Auth/AuthComponent.swift; sourceTree = "<group>"; };
-		A9FA894E1E24BDDC008B57DF /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthViewModel.swift; path = MVVM/Auth/AuthViewModel.swift; sourceTree = "<group>"; };
-		A9FA89501E24D305008B57DF /* UIRxView+Bindings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIRxView+Bindings.swift"; path = "Extensions/Reactive/MVVM/UIRxView+Bindings.swift"; sourceTree = "<group>"; };
-		A9FA89521E24DA7B008B57DF /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthView.swift; path = MVVM/Auth/AuthView.swift; sourceTree = "<group>"; };
-		A9FA89551E24F2EA008B57DF /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = Services/AuthService.swift; sourceTree = "<group>"; };
-		A9FA89571E24F63D008B57DF /* ServiceContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceContainer.swift; path = Services/ServiceContainer.swift; sourceTree = "<group>"; };
+		A9FA893A1E24B975008B57DF /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		A9FA893C1E24B9F5008B57DF /* Disposables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposables.swift; sourceTree = "<group>"; };
+		A9FA893E1E24BAA7008B57DF /* UIRxComponentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRxComponentsViewController.swift; sourceTree = "<group>"; };
+		A9FA89401E24BB5B008B57DF /* UIView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
+		A9FA89441E24BBE9008B57DF /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		A9FA89461E24BC27008B57DF /* RxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewModel.swift; sourceTree = "<group>"; };
+		A9FA894C1E24BD24008B57DF /* AuthComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthComponent.swift; sourceTree = "<group>"; };
+		A9FA894E1E24BDDC008B57DF /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		A9FA89501E24D305008B57DF /* UIRxView+Bindings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRxView+Bindings.swift"; sourceTree = "<group>"; };
+		A9FA89521E24DA7B008B57DF /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		A9FA89551E24F2EA008B57DF /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A9FA89571E24F63D008B57DF /* ServiceContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
 		A9FA895A1E25060F008B57DF /* UIViewController+Activities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Activities.swift"; sourceTree = "<group>"; };
 		C6405E81FE471378B28C505B /* Pods-mvvm_components.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm_components.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm_components/Pods-mvvm_components.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,9 +70,9 @@
 			isa = PBXGroup;
 			children = (
 				A9A7FBD91E23B99B00FA9405 /* mvvm_components */,
-				A9A7FBD81E23B99B00FA9405 /* Products */,
-				CF639BB6E4B5357112C50F45 /* Pods */,
 				F0F28CFB07B428975019FB43 /* Frameworks */,
+				CF639BB6E4B5357112C50F45 /* Pods */,
+				A9A7FBD81E23B99B00FA9405 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,37 +87,46 @@
 		A9A7FBD91E23B99B00FA9405 /* mvvm_components */ = {
 			isa = PBXGroup;
 			children = (
-				A9FA89541E24F2D5008B57DF /* Services */,
-				A9FA89431E24BBCB008B57DF /* MVVM */,
 				A9FA89361E24B8E3008B57DF /* Extensions */,
+				A9FA89431E24BBCB008B57DF /* MVVM */,
+				A9FA89541E24F2D5008B57DF /* Services */,
 				A9A7FBDA1E23B99B00FA9405 /* AppDelegate.swift */,
-				A9A7FBDC1E23B99B00FA9405 /* ViewController.swift */,
-				A9A7FBDE1E23B99B00FA9405 /* Main.storyboard */,
 				A9A7FBE11E23B99B00FA9405 /* Assets.xcassets */,
-				A9A7FBE31E23B99B00FA9405 /* LaunchScreen.storyboard */,
 				A9A7FBE61E23B99B00FA9405 /* Info.plist */,
+				A9A7FBE31E23B99B00FA9405 /* LaunchScreen.storyboard */,
+				A9A7FBDE1E23B99B00FA9405 /* Main.storyboard */,
+				A9A7FBDC1E23B99B00FA9405 /* ViewController.swift */,
 			);
 			path = mvvm_components;
+			sourceTree = "<group>";
+		};
+		A9F7A0521E26273400B9B1A0 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				A9FA89551E24F2EA008B57DF /* AuthService.swift */,
+				A9FA89571E24F63D008B57DF /* ServiceContainer.swift */,
+			);
+			path = Sample;
 			sourceTree = "<group>";
 		};
 		A9FA89361E24B8E3008B57DF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A9FA89591E2505FB008B57DF /* ViewController */,
 				A9FA89371E24B8F1008B57DF /* Reactive */,
+				A9FA89591E2505FB008B57DF /* ViewController */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A9FA89371E24B8F1008B57DF /* Reactive */ = {
 			isa = PBXGroup;
 			children = (
 				A9FA893C1E24B9F5008B57DF /* Disposables.swift */,
+				A9FA89501E24D305008B57DF /* UIRxView+Bindings.swift */,
 				A9FA89401E24BB5B008B57DF /* UIView+Rx.swift */,
 				A9FA893A1E24B975008B57DF /* UIViewController+Rx.swift */,
-				A9FA89501E24D305008B57DF /* UIRxView+Bindings.swift */,
 			);
-			name = Reactive;
+			path = Reactive;
 			sourceTree = "<group>";
 		};
 		A9FA89431E24BBCB008B57DF /* MVVM */ = {
@@ -126,36 +135,35 @@
 				A9FA894B1E24BCED008B57DF /* Auth */,
 				A9FA89481E24BC35008B57DF /* Base */,
 			);
-			name = MVVM;
+			path = MVVM;
 			sourceTree = "<group>";
 		};
 		A9FA89481E24BC35008B57DF /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				A9FA89441E24BBE9008B57DF /* Component.swift */,
-				A9FA893E1E24BAA7008B57DF /* UIRxComponentsViewController.swift */,
 				A9FA89461E24BC27008B57DF /* RxViewModel.swift */,
+				A9FA893E1E24BAA7008B57DF /* UIRxComponentsViewController.swift */,
 			);
-			name = Base;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		A9FA894B1E24BCED008B57DF /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				A9FA894C1E24BD24008B57DF /* AuthComponent.swift */,
-				A9FA894E1E24BDDC008B57DF /* AuthViewModel.swift */,
 				A9FA89521E24DA7B008B57DF /* AuthView.swift */,
+				A9FA894E1E24BDDC008B57DF /* AuthViewModel.swift */,
 			);
-			name = Auth;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		A9FA89541E24F2D5008B57DF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A9FA89551E24F2EA008B57DF /* AuthService.swift */,
-				A9FA89571E24F63D008B57DF /* ServiceContainer.swift */,
+				A9F7A0521E26273400B9B1A0 /* Sample */,
 			);
-			name = Services;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A9FA89591E2505FB008B57DF /* ViewController */ = {
@@ -163,7 +171,7 @@
 			children = (
 				A9FA895A1E25060F008B57DF /* UIViewController+Activities.swift */,
 			);
-			name = ViewController;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CF639BB6E4B5357112C50F45 /* Pods */ = {
@@ -333,6 +341,7 @@
 				A9A7FBDF1E23B99B00FA9405 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		A9A7FBE31E23B99B00FA9405 /* LaunchScreen.storyboard */ = {
@@ -341,6 +350,7 @@
 				A9A7FBE41E23B99B00FA9405 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

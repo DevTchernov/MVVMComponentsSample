@@ -41,7 +41,7 @@ class AuthView: UIRxView {
       withFabric: { .SignIn },
       toAction: viewModel.accept)    
     
-    //Если дальше идти по рекомендованному пути RxCocoa - можно привязываться к состоянию вот так (т.е. каждая view самостоятельно следит за состоянием):
+    //Если дальше идти по рекомендованному RxCocoa пути  - можно привязываться к состоянию вот так (т.е. каждая view самостоятельно следит за состоянием):
     /*
     if let button = self.loginButton {
       viewModel.observeState().map({ $0.canLogin }).bindTo(button.rx.isEnabled).addDisposableTo(self.disposeBag)
@@ -70,7 +70,10 @@ class AuthView: UIRxView {
         self.username?.textColor = flags.contains(.Username) ? UIColor.black : UIColor.red
         self.password?.textColor = flags.contains(.Password) ? UIColor.black : UIColor.red
         break
+      default:
+        break
       }
+      
     })
   }
 }

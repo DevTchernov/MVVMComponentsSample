@@ -10,6 +10,9 @@ import Foundation
 import RxSwift
 import IRDSwiftCoreModule
 
+/*
+ Base variant
+ */
 class AuthService {
   static let instance = AuthService()
   

@@ -16,7 +16,7 @@ class ViewController: UIRxComponentsViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+
     self.observeAction(
       authComponent.observeState(),
       onNext: { state in
@@ -36,5 +36,7 @@ class ViewController: UIRxComponentsViewController {
         }
     }, onError: nil, onCompleted: nil)
   }
+  
+  
   
 }

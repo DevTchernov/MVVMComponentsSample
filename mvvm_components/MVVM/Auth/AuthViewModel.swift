@@ -17,6 +17,7 @@ class AuthViewModel: RxViewModel {
     case Password(String?)
   }
   
+  //На случай если требуется много валидаций
   struct DataValidationFlags: OptionSet {
     let rawValue: Int
     static let NonValid = DataValidationFlags(rawValue: 0)
@@ -25,6 +26,7 @@ class AuthViewModel: RxViewModel {
     static let Valid: DataValidationFlags = [.Username, .Password]
   }
   
+  //Не уверен что правильно называть это состоянием (все таки большинство значений - события)
   enum State {
     case Initial
     case ValidationChanged(DataValidationFlags)
@@ -72,6 +74,10 @@ class AuthViewModel: RxViewModel {
   }
   
   //MARK: - Commands
+  
+  /*
+   override it?
+   */
   func accept(action: Action) {
     switch(action) {
     case .SignIn:
@@ -105,6 +111,10 @@ class AuthViewModel: RxViewModel {
   }
   
   //MARK: - Validation
+  
+  /*
+   override it?
+   */
   func dataIsValid(data: DataType) -> Bool {
     switch (data) {
     case .Password(let text):
@@ -115,6 +125,10 @@ class AuthViewModel: RxViewModel {
   }
   
   //MARK: - Service methods
+  
+  /*
+   override it?
+   */
   func loginAction() {
     let username = self.currentUsername.value 
     let password = self.currentPassword.value
