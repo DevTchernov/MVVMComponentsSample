@@ -10,12 +10,5 @@ import Foundation
 import RxSwift
 
 class UIRxComponentsViewController: UIRxViewController {
-  @IBOutlet var components: [MVVMComponent]!  //Чтобы не терять ссылки
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    for component in components {
-      component.setup()
-    }
-  }
+  @IBOutlet var components: [MVVMComponent]!  //Чтобы не терять ссылки  
 }

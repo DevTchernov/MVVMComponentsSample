@@ -10,13 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ViewController: UIRxComponentsViewController {
+class AuthViewController: UIRxComponentsViewController {
 
   @IBOutlet var authComponent: AuthComponent!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    authComponent.setup()
+    
     self.observeAction(
       authComponent.observeState(),
       onNext: { state in
@@ -26,6 +27,10 @@ class ViewController: UIRxComponentsViewController {
           break
         case .Success:
           self.hideProgress()
+          
+          //TODO: routing
+          self.performSegue(withIdentifier: "toMainSegue", sender: nil)
+          
           break
         case .Error(let error):
           self.hideProgress()

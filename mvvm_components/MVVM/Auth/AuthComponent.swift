@@ -19,6 +19,8 @@ class AuthComponent: MVVMRxComponent {
   let viewModel = AuthViewModel()
   
   override func setup() {
+    
+    //Observe data
     self.observeAction(viewModel.observeData(), onNext: { data in
       switch(data) {
       case .Username(let text):
@@ -30,7 +32,7 @@ class AuthComponent: MVVMRxComponent {
       }
     })
     
-    //Шлем команды (вполне спокойно можно и через привычные @IBAction/Delegates это все делать
+    //Bind view events to commands
     self.bindControlProperty(
       controlProperty: self.username?.rx.text,
       withFabric: { .ChangeData(AuthViewModel.DataType.Username($0)) },
@@ -44,13 +46,7 @@ class AuthComponent: MVVMRxComponent {
       withFabric: { .SignIn },
       toAction: viewModel.accept)
     
-    //Если дальше идти по рекомендованному RxCocoa пути  - можно привязываться к состоянию вот так (т.е. каждая view самостоятельно следит за состоянием):
-    /*
-     if let button = self.loginButton {
-     viewModel.observeState().map({ $0.canLogin }).bindTo(button.rx.isEnabled).addDisposableTo(self.disposeBag)
-     }*/
-    
-    //Либо также как с данными - один метод с состоянием на входе
+    //Observe state
     self.observeAction(viewModel.observeState(), onNext: {
       state -> Void in
       print(state)
@@ -74,10 +70,10 @@ class AuthComponent: MVVMRxComponent {
         self.password?.textColor = flags.contains(.Password) ? UIColor.black : UIColor.red
         break
       }
-      
     })
   }
   
+  //public observe
   func observeState() -> Observable<AuthViewModel.State> {
     return viewModel.observeState()
   }

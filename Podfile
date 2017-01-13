@@ -12,6 +12,7 @@ target 'mvvm_components' do
   pod 'RxCocoa'
   pod 'IRDSwiftCoreModule'
   pod 'MBProgressHUD'
+  pod 'ObservableArray-RxSwift'
 end
 
 
