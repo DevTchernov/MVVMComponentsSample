@@ -13,6 +13,7 @@ target 'mvvm_components' do
   pod 'IRDSwiftCoreModule'
   pod 'MBProgressHUD'
   pod 'ObservableArray-RxSwift'
+  pod 'Diff'
 end
 
 

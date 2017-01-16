@@ -1,4 +1,5 @@
 PODS:
+  - Diff (0.5.0)
   - IRDSwiftCoreModule (1.0.0)
   - MBProgressHUD (1.0.0)
   - ObservableArray-RxSwift (0.1.0):
@@ -8,6 +9,7 @@ PODS:
   - RxSwift (3.1.0)
 
 DEPENDENCIES:
+  - Diff
   - IRDSwiftCoreModule
   - MBProgressHUD
   - ObservableArray-RxSwift
@@ -15,12 +17,13 @@ DEPENDENCIES:
   - RxSwift
 
 SPEC CHECKSUMS:
+  Diff: eceb93a3adf508574ba9b8560da185ace83de055
   IRDSwiftCoreModule: afebf67c6496025095d98a259707ee979dd748d0
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   ObservableArray-RxSwift: 5f29ab095e2746f046388626dfde37052792e6f5
   RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
 
-PODFILE CHECKSUM: a499c0d741ca803edc4c6c23a27651bd54d08c7a
+PODFILE CHECKSUM: 13c1ab2378b162052f434e5f9febadb83d0de166
 
 COCOAPODS: 1.1.1

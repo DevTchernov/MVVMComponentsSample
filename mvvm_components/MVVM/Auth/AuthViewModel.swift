@@ -129,7 +129,7 @@ class AuthViewModel: RxViewModel {
   /*
    override it?
    */
-  func loginAction() {
+  func loginAction() {    
     let username = self.currentUsername.value 
     let password = self.currentPassword.value
     self.observeLoading(

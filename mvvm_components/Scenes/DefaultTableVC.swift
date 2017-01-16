@@ -28,7 +28,8 @@ class DefaultTableVC: UIRxComponentsViewController {
         case .Default:
           self.hideProgress()
           break
-        case .Selected(_):
+        case .Selected(let element):
+          print("Selected \(element.data)") //Know about selected model object on UI (
           //Navigate?
           break
         }

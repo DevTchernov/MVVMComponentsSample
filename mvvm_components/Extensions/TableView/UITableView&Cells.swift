@@ -15,38 +15,27 @@ extension UITableView {
   func registerCell(nibName: String?, reuseId: String) {
     if let xib = nibName {
       self.register(UINib(nibName: xib, bundle: Bundle.main), forCellReuseIdentifier: reuseId)
-    }    
+    }
   }
 }
 
 //MARK: - Fillable
 protocol FillableCellProtocol {
-	//Don't call super.fill()
-	func fill(_ data: Any?)
-	func update(_ data: Any?)
+  associatedtype DataType
+  //Don't call super.fill()
+  func fill(_ data: DataType)
+  func update(_ data: DataType)
 }
 
 //MARK: - Custom cell actions
 
-class RxCustomActionCell: UITableViewCell {
-  private let actionSubject = PublishSubject<Any>()
-  var actionDriver: Driver<Any> {
-    get {
-      return actionSubject
-        .map({ any -> Any? in
-          return any
-        })
-        .asDriver(onErrorJustReturn: nil)
-        .filter{ $0 != nil }
-        .map{ $0! }
-    }
-  }
-  
-  func forceAction(withParam param: Any) {
-    
-  }
-  deinit {
-    actionSubject.dispose()
+protocol ActionCellProtocol: class {
+  associatedtype ActionType
+  var actionObserver: AnyObserver<ActionType>? { get set }
+}
+extension ActionCellProtocol {
+  func sendAction(withType type: ActionType) {
+    actionObserver?.onNext(type)
   }
 }
 
