@@ -14,16 +14,19 @@ import RxSwift
  указываем действия какого типа может генерироваться ячейка (также enum / Any )
  */
 class DefaultTableViewCell: UITableViewCell, ActionCellProtocol, FillableCellProtocol {
+  //MARK: ActionType
   typealias ActionType = TableViewModel.Action
-  typealias DataType = TableViewModel.TableElement
   var actionObserver: AnyObserver<ActionType>? = nil
-  func update(_ data: DataType) {
-    
-  }
+  
+  //MARK: DataType
+  typealias DataType = TableViewModel.TableElement
   
   func fill(_ data: DataType) {
     self.textLabel?.text = "\(data.data)"
-    self.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(tapOnText)))
+  }
+
+  func update(_ data: DataType) {
+    //you can load something..
   }
   
   func tapOnText(gesture: UITapGestureRecognizer) {

@@ -27,10 +27,8 @@ class AuthViewController: UIRxComponentsViewController {
           break
         case .Success:
           self.hideProgress()
-          
-          //TODO: routing
+          //Контроллер знает о своих segues но не знает о том что передать дальше
           self.performSegue(withIdentifier: "toMainSegue", sender: nil)
-          
           break
         case .Error(let error):
           self.hideProgress()

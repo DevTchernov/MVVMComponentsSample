@@ -10,23 +10,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class AuthViewModel: RxViewModel {
-  //MARK: - Enums
-  enum DataType {
-    case Username(String?)
-    case Password(String?)
-  }
+class AuthViewModel: RxViewModel, ActionViewModel, StateViewModel {
+  //MARK: Private
+  private let services = ServiceContainer.instance
   
-  //На случай если требуется много валидаций
-  struct DataValidationFlags: OptionSet {
-    let rawValue: Int
-    static let NonValid = DataValidationFlags(rawValue: 0)
-    static let Username = DataValidationFlags(rawValue: 1)
-    static let Password = DataValidationFlags(rawValue: 2)
-    static let Valid: DataValidationFlags = [.Username, .Password]
-  }
-  
-  //Не уверен что правильно называть это состоянием (все таки большинство значений - события)
+  //MARK: - State
+  typealias ModelState = State
   enum State {
     case Initial
     case ValidationChanged(DataValidationFlags)
@@ -46,38 +35,17 @@ class AuthViewModel: RxViewModel {
     }
   }
   
+  private var currentState = Variable<State>(.Initial)
+  var observeState: Observable<State> { get { return self.currentState.asObservable() } }
+
+  //MARK: Actions
+  typealias ModelAction = Action
   enum Action {
     case ChangeData(DataType)
     case SignIn
     case SignUp
   }
   
-  //MARK: - Private
-  private var currentUsername = Variable<String>("")
-  private var currentPassword = Variable<String>("")
-  private var currentState = Variable<State>(.Initial)
-  private var currentValidation: DataValidationFlags = .NonValid {
-    didSet {
-      self.currentState.value = .ValidationChanged(self.currentValidation)
-    }
-  }
-  
-  //MARK: - Observables
-  func observeData() -> Observable<DataType> { //Если хотим менять значения извне
-    return Observable.of(
-      currentUsername.asObservable().map{ DataType.Username($0) },
-      currentPassword.asObservable().map{ DataType.Password($0) }).merge()
-  }
-  
-  func observeState() -> Observable<State> {
-    return self.currentState.asObservable()
-  }
-  
-  //MARK: - Commands
-  
-  /*
-   override it?
-   */
   func accept(action: Action) {
     switch(action) {
     case .SignIn:
@@ -89,11 +57,11 @@ class AuthViewModel: RxViewModel {
       var validationFlag = DataValidationFlags.NonValid
       switch (dataType) {
       case .Username(let text):
-        self.currentUsername.value = text ?? ""
+        username.value = text ?? ""
         validationFlag = .Username
         break
       case .Password(let text):
-        self.currentPassword.value = text ?? ""
+        password.value = text ?? ""
         validationFlag = .Password
         break
       }
@@ -110,11 +78,50 @@ class AuthViewModel: RxViewModel {
     }
   }
   
-  //MARK: - Validation
+  func loginAction() {
+    self.observeLoading(
+      self.services.authService.login(withUser: username.value, andPassword: password.value),
+      onNext: nil,
+      onError: { error in
+        self.currentState.value = .Error(error)
+    },
+      onCompleted: {
+        self.currentState.value = .Success
+    })
+  }
+
   
-  /*
-   override it?
-   */
+  //MARK: - Data
+  enum DataType {
+    case Username(String?)
+    case Password(String?)
+  }
+  
+  private var username = Variable<String>("")
+  private var password = Variable<String>("")
+  
+  //MARK: - Observables
+  func observeData() -> Observable<DataType> { //Если хотим менять значения извне
+    return Observable.of(
+      username.asObservable().map{ DataType.Username($0) },
+      password.asObservable().map{ DataType.Password($0) }).merge()
+  }
+  
+  //MARK: - Validation
+  struct DataValidationFlags: OptionSet {
+    let rawValue: Int
+    static let NonValid = DataValidationFlags(rawValue: 0)
+    static let Username = DataValidationFlags(rawValue: 1)
+    static let Password = DataValidationFlags(rawValue: 2)
+    static let Valid: DataValidationFlags = [.Username, .Password]
+  }
+  
+  private var currentValidation: DataValidationFlags = .NonValid {
+    didSet {
+      self.currentState.value = .ValidationChanged(self.currentValidation)
+    }
+  }
+
   func dataIsValid(data: DataType) -> Bool {
     switch (data) {
     case .Password(let text):
@@ -124,24 +131,6 @@ class AuthViewModel: RxViewModel {
     }
   }
   
-  //MARK: - Service methods
-  
-  /*
-   override it?
-   */
-  func loginAction() {    
-    let username = self.currentUsername.value 
-    let password = self.currentPassword.value
-    self.observeLoading(
-      ServiceContainer.instance.authService.login(withUser: username, andPassword: password),
-      onNext: nil,
-      onError: { error in
-        self.currentState.value = .Error(error)
-      },
-      onCompleted: {
-        self.currentState.value = .Success
-      })
-  }
 }
 
 

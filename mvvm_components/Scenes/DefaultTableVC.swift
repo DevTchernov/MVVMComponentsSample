@@ -14,6 +14,8 @@ class DefaultTableVC: UIRxComponentsViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    //На уровне контроллера говорим какие ячейки должен уметь принимать компонент таблицы    
+    //Дальше они сами договорятся если соблюсти все протоколы
     tableComponent.setup()
     
     self.observeAction(

@@ -14,12 +14,9 @@ class AuthComponent: MVVMRxComponent {
   @IBOutlet weak var username: UITextField!
   @IBOutlet weak var password: UITextField!
   @IBOutlet weak var loginButton: UIButton!
-  
-  
   let viewModel = AuthViewModel()
   
-  override func setup() {
-    
+  func setup() {
     //Observe data
     self.observeAction(viewModel.observeData(), onNext: { data in
       switch(data) {
@@ -33,21 +30,15 @@ class AuthComponent: MVVMRxComponent {
     })
     
     //Bind view events to commands
-    self.bindControlProperty(
-      controlProperty: self.username?.rx.text,
-      withFabric: { .ChangeData(AuthViewModel.DataType.Username($0)) },
-      toAction: viewModel.accept)
-    self.bindControlProperty(
-      controlProperty: self.password?.rx.text,
-      withFabric: { .ChangeData(AuthViewModel.DataType.Password($0)) },
-      toAction: viewModel.accept)
-    self.bindControlEvent(
-      controlEvent: self.loginButton?.rx.controlEvent(UIControlEvents.touchUpInside),
-      withFabric: { .SignIn },
-      toAction: viewModel.accept)
+    viewModel.bindActions(from:
+      self.username?.rx.text.map { AuthViewModel.Action.ChangeData(AuthViewModel.DataType.Username($0)) })
+    viewModel.bindActions(from:
+      self.password?.rx.text.map { AuthViewModel.Action.ChangeData(AuthViewModel.DataType.Password($0)) })
+    viewModel.bindActions(from:
+      self.loginButton?.rx.controlEvent(UIControlEvents.touchUpInside).map { AuthViewModel.Action.SignIn })
     
     //Observe state
-    self.observeAction(viewModel.observeState(), onNext: {
+    self.observeAction(viewModel.observeState, onNext: {
       state -> Void in
       print(state)
       self.loginButton.isEnabled = state.canLogin
@@ -75,6 +66,6 @@ class AuthComponent: MVVMRxComponent {
   
   //public observe
   func observeState() -> Observable<AuthViewModel.State> {
-    return viewModel.observeState()
+    return viewModel.observeState
   }
 }

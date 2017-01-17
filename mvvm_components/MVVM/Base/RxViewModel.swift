@@ -17,7 +17,25 @@ class RxViewModel: NSObject, DisposableContainer {
   func observeInput<T>( _ observable: Observable<T>, onNext: ((T) -> Void)? = nil, onError: ( (Error) -> Void)? = nil, onCompleted: (() -> Void)? = nil ) {
     observe(observable, onScheduler: inputScheduler, onNext: onNext, onError: onError, onCompleted: onCompleted)
   }
+  
   func observeLoading<T>( _ observable: Observable<T>, onNext: ((T) -> Void)? = nil, onError: ( (Error) -> Void)? = nil, onCompleted: (() -> Void)? = nil ) {
     observe(observable, onScheduler: serviceScheduler, onNext: onNext, onError: onError, onCompleted: onCompleted)
+  }
+}
+
+protocol StateViewModel: class {
+  associatedtype ModelState
+  var observeState: Observable<ModelState> { get }
+}
+
+protocol ActionViewModel: class {
+  associatedtype ModelAction
+  func accept(action: ModelAction)
+}
+
+extension ActionViewModel where Self:RxViewModel {
+  func bindActions(from: Observable<ModelAction>?) {
+    guard let input = from else { return }
+    self.observeInput(input, onNext: { self.accept(action: $0) })
   }
 }

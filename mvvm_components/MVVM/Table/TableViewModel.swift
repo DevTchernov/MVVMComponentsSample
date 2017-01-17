@@ -11,54 +11,9 @@ import RxSwift
 import RxCocoa
 import ObservableArray_RxSwift
 
-extension TableViewModel.TableElement: Equatable {
-}
-
-
-class TableViewModel: RxViewModel {
-  
-  enum ElementType { //View model говорит что у нее есть данные разного типа, view потом выбирает под них ячейки
-    case Default
-    case Extra
-  }
-  class TableElement {
-    var type: ElementType = .Default
-    var data: String = ""
-    init(withType eType: ElementType, andData sData: String) {
-      self.type = eType
-      self.data = sData
-    }
-    public static func ==(lhs: TableElement, rhs: TableElement) -> Bool {
-      return lhs.type == rhs.type && lhs.data == rhs.data
-    }
-  }
-  
-  private var currentState = Variable<State>(.Initial)
-  private var itemsObservable = BehaviorSubject<[TableElement]>.init(value: [])
-  private var items: [TableElement] = [] {
-    didSet {
-      itemsObservable.onNext(items)
-    }
-  }
-  
-  
-  enum State {
-    case Initial
-    case Default
-    case Loading
-    case Selected(TableElement)
-  }
-  
-  func loadData() {
-    self.currentState.value = .Loading
-    items.append(TableElement(withType: .Default, andData: "1"))
-    items.append(TableElement(withType: .Default, andData: "2"))
-    items.append(TableElement(withType: .Extra, andData: "5"))
-    items.append(TableElement(withType: .Default, andData: "8"))
-    items.append(TableElement(withType: .Extra, andData: "4"))
-    self.currentState.value = .Default
-  }
-  
+class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
+  //MARK: Actions
+  typealias ModelAction = Action
   enum Action {
     case SelectItem(Int)
     case JustTap
@@ -78,6 +33,54 @@ class TableViewModel: RxViewModel {
       break
     }
   }
-  var observeData: Observable<[TableElement]> { get { return self.itemsObservable.asObservable() } }
+  //MARK: State
+  typealias ModelState = State
+  enum State {
+    case Initial
+    case Default
+    case Loading
+    case Selected(TableElement)
+  }
+  private var currentState = Variable<State>(.Initial)
   var observeState: Observable<State> { get { return self.currentState.asObservable() } }
+  //MARK: Data
+
+  enum ElementType {
+    case Default
+    case Extra
+  }
+  
+  class TableElement {
+    var type: ElementType = .Default
+    var data: String = ""
+    init(withType eType: ElementType, andData sData: String) {
+      self.type = eType
+      self.data = sData
+    }
+  }
+  //Can be changed for variable
+  private var itemsObservable = BehaviorSubject<[TableElement]>.init(value: [])
+  private var items: [TableElement] = [] {
+    didSet {
+      itemsObservable.onNext(items)
+    }
+  }
+  var observeData: Observable<[TableElement]> { get { return self.itemsObservable.asObservable() } }
+    
+  func loadData() {
+    //TODO: In background?
+    self.currentState.value = .Loading
+    items.append(TableElement(withType: .Default, andData: "1"))
+    items.append(TableElement(withType: .Default, andData: "2"))
+    items.append(TableElement(withType: .Extra, andData: "5"))
+    items.append(TableElement(withType: .Default, andData: "8"))
+    items.append(TableElement(withType: .Extra, andData: "4"))
+    self.currentState.value = .Default
+  }
+}
+
+extension TableViewModel.TableElement: Equatable { //If you want
+  public static func ==(lhs: TableViewModel.TableElement, rhs: TableViewModel.TableElement) -> Bool {
+    return lhs.type == rhs.type && lhs.data == rhs.data
+  }
 }
