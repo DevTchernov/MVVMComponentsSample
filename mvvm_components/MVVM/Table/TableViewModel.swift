@@ -13,23 +13,35 @@ import ObservableArray_RxSwift
 
 class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
   //MARK: Actions
-  typealias ModelAction = Action
-  enum Action {
-    case SelectItem(Int)
-    case JustTap
+  typealias ModelAction = Actions
+  enum Actions {
+    enum Cell {
+      case Select
+      case SwipeLeft
+    }
+    case CellAction(action: Cell, index: Int)
+    case Refresh
   }
   
-  func accept(action: Action) {
+  func accept(action: ModelAction) {
+    //let index = action.index
+    //let action = action.action //o_O
     switch(action) {
-    case .SelectItem(let index):
-      let item = self.items[index]
-      self.currentState.value = .Selected(item)
-      //says some service
+    case .CellAction(let cellAction, let index):
+      switch(cellAction) {
+      case .Select:
+        let item = self.items[index]
+        self.currentState.value = .Selected(item)
+        //run some service methods?
+        break
+      case .SwipeLeft:
+        self.items.remove(at: index)
+        break
+      }
       break
-    case .JustTap:
-      print("Tap !")
-      let pos = Int(arc4random() % UInt32(items.count))
-      items.insert(TableElement(withType: .Default, andData: "\(arc4random() % 10)"), at: pos)
+    case .Refresh:
+      self.items.removeAll()
+      self.loadData()
       break
     }
   }

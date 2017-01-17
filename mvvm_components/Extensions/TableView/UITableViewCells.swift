@@ -20,13 +20,13 @@ protocol FillableCellProtocol {
 }
 
 //MARK: - Custom cell actions
-
 protocol ActionCellProtocol: class {
   associatedtype ActionType
-  var actionObserver: AnyObserver<ActionType>? { get set }
+  var actionObserver: AnyObserver<(cell: UITableViewCell, action: ActionType)>? { get set }
 }
-extension ActionCellProtocol {
+
+extension ActionCellProtocol where Self:UITableViewCell {
   func sendAction(withType type: ActionType) {
-    actionObserver?.onNext(type)
+    actionObserver?.onNext((self, type))
   }
 }

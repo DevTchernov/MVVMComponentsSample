@@ -38,8 +38,9 @@ class UIAbstractTableSource<CellType : FillableCellProtocol & ActionCellProtocol
   }
   
   //MARK: - Cell's custom actions
-  let cellSelectedObserver = PublishSubject<IndexPath>()
-  let cellActionObserver = PublishSubject<Action>()
+  let cellSelectedObserver = PublishSubject<IndexPath>() //cell selection event
+  let cellActionObserver = PublishSubject<(cell: UITableViewCell, action: Action)>() //cell custom events
+  //let tableActionObserver //can be events/gestures on tableView (refresh/etc)
   
   func reloadTable(tableView: UITableView, fromItems: [CellItem]) {
     tableView.reloadData()
@@ -78,8 +79,8 @@ class UIAbstractReloadableTableSource<CellType: FillableCellProtocol & ActionCel
     tableView.animateRowChanges(
       oldData: fromItems.map{ $0.model },
       newData: self.items.map{ $0.model },
-      deletionAnimation: .right,
-      insertionAnimation: .left)
+      deletionAnimation: .left,
+      insertionAnimation: .middle)
   }
 }
 

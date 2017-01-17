@@ -68,18 +68,24 @@ class TableComponent: MVVMRxComponent {
    * Связываем dataSource и viewModel
    */
   private func linkViewModel() {
-    //Создаем dataSource и цепляем к viewModel
+    //Создаем dataSource и цепляем действия из него к viewModel
     let source = Source()
-    viewModel.bindActions(from: source.cellSelectedObserver.asObservable().map{.SelectItem( $0.item )  })
-    viewModel.bindActions(from: source.cellActionObserver.asObservable() )
+    viewModel.bindActions(
+      from: source.cellSelectedObserver.asObservable()
+        .map{ .CellAction(action: .Select, index: $0.item )  })
     
-    //Цепляем viewModel к
+    viewModel.bindActions(
+      from: source.cellActionObserver.asObservable()
+        .map{ .CellAction(action: $0.action, index: self.tableView.indexPath(for: $0.cell)?.item ?? -1) })
+    
+    //А данные из viewModel к dataSource
     let rxCells = viewModel.observeData.observeOn(MainScheduler.instance).map { $0.map { dataElem -> Source.CellItem in
       return Source.CellItem(
         model: dataElem,
         config: self.supportedCells[dataElem.type]!)
       }
-    }    
+    }
+    
     tableView.dataSource = source
     tableView.delegate = source
     source.subscribe(forData: rxCells, onTableView: tableView)
