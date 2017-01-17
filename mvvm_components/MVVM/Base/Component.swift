@@ -10,7 +10,10 @@ import Foundation
 import RxSwift
 
 class MVVMComponent: NSObject {
-
+  private var wasSetuped = false
+  func setup(with initialObject: Any? = nil) {
+    //override it
+  }
 }
 
 class MVVMRxComponent: MVVMComponent, DisposableContainer {

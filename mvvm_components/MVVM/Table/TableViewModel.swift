@@ -31,17 +31,25 @@ class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
       switch(cellAction) {
       case .Select:
         let item = self.items[index]
-        self.currentState.value = .Selected(item)
-        //run some service methods?
+        
+        switch(item.type) {
+        case .Default:
+          self.currentState.value = .SelectedDefault(item.data)
+          break
+        case .Extra:
+          self.currentState.value = .SelectedExtra(item.data)
+          break
+        }
+        
+        //сказать каким-нибудь сервисам?
         break
-      case .SwipeLeft:
+      case .SwipeLeft:  //Правильнее было бы назвать действие как-то иначе (Delete) а вот уже на ячейке решать как оно реализовано
         self.items.remove(at: index)
         break
       }
       break
     case .Refresh:
-      self.items.removeAll()
-      self.loadData()
+      //Перезагрузить?
       break
     }
   }
@@ -51,7 +59,8 @@ class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
     case Initial
     case Default
     case Loading
-    case Selected(TableElement)
+    case SelectedDefault(String)
+    case SelectedExtra(String)
   }
   private var currentState = Variable<State>(.Initial)
   var observeState: Observable<State> { get { return self.currentState.asObservable() } }
@@ -79,14 +88,14 @@ class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
   }
   var observeData: Observable<[TableElement]> { get { return self.itemsObservable.asObservable() } }
     
-  func loadData() {
+  func loadData(for object: Any?) {
     //TODO: In background?
     self.currentState.value = .Loading
-    items.append(TableElement(withType: .Default, andData: "1"))
-    items.append(TableElement(withType: .Default, andData: "2"))
-    items.append(TableElement(withType: .Extra, andData: "5"))
-    items.append(TableElement(withType: .Default, andData: "8"))
-    items.append(TableElement(withType: .Extra, andData: "4"))
+    let number = Int(((object as? TableElement)?.data) ?? "") ?? 0
+    srand48(number)
+    for _ in 0...4 {
+      items.append(TableElement(withType: arc4random() % 2 == 0 ? .Default : .Extra, andData: "\(arc4random() % 10)"))
+    }
     self.currentState.value = .Default
   }
 }

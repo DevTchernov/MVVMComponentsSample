@@ -41,8 +41,12 @@ class TableComponent: MVVMRxComponent {
    * Типы ячеек
    */
   var supportedCells:[TableViewModel.ElementType: CellConfig] = [:]
-  
-  func setup() {
+  //Компонент поддерживает несколько вариантов настройки извне (по умолчанию и с параметрами)
+  private var wasSetuped = false
+  override func setup(with object: Any? = nil) {
+    super.setup(with: object)
+    guard wasSetuped == false else { return }
+    wasSetuped = true
     //Выбираем поддерживаемые ячейки
     //xibName = nil если ячейка уже зарегистрирована в таблице (на storyboard например)
     supportedCells[.Default] =  CellConfig(reuseId: "default", xibName: nil, 44)
@@ -52,7 +56,7 @@ class TableComponent: MVVMRxComponent {
     linkViewModel()
 
     //Begin viewModel life
-    viewModel.loadData()
+    viewModel.loadData(for: object)
   }
   
   /*

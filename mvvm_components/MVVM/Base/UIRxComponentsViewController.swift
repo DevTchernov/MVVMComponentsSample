@@ -10,5 +10,16 @@ import Foundation
 import RxSwift
 
 class UIRxComponentsViewController: UIRxViewController {
-  @IBOutlet var components: [MVVMComponent]!  //Чтобы не терять ссылки  
+  @IBOutlet var components: [MVVMComponent]!  //Чтобы не терять ссылки
+  var initialObject: Any? = nil //Для настройки компонентов
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    for component in components {
+      component.setup(with: initialObject)
+    }
+  }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
+    (segue.destination as? UIRxComponentsViewController)?.initialObject = sender
+  }
 }

@@ -16,7 +16,7 @@ class AuthComponent: MVVMRxComponent {
   @IBOutlet weak var loginButton: UIButton!
   let viewModel = AuthViewModel()
   
-  func setup() {
+  override func setup(with initialObject: Any? = nil) {
     //Observe data
     self.observeAction(viewModel.observeData(), onNext: { data in
       switch(data) {
