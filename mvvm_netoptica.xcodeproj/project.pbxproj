@@ -9,21 +9,73 @@
 /* Begin PBXBuildFile section */
 		086C346D9645D7FC6705868D /* Pods_mvvm_netoptica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B712E8C069A3CD7FBD19D6 /* Pods_mvvm_netoptica.framework */; };
 		A99ABB841E38653B00821B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB831E38653B00821B78 /* AppDelegate.swift */; };
-		A99ABB861E38653B00821B78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB851E38653B00821B78 /* ViewController.swift */; };
 		A99ABB891E38653B00821B78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99ABB871E38653B00821B78 /* Main.storyboard */; };
 		A99ABB8B1E38653B00821B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99ABB8A1E38653B00821B78 /* Assets.xcassets */; };
 		A99ABB8E1E38653B00821B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99ABB8C1E38653B00821B78 /* LaunchScreen.storyboard */; };
+		A99ABB9C1E38853900821B78 /* NOTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB9A1E38853900821B78 /* NOTextField.swift */; };
+		A99ABB9D1E38853900821B78 /* NOTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99ABB9B1E38853900821B78 /* NOTextField.xib */; };
+		A99ABB9F1E38854C00821B78 /* UILoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB9E1E38854C00821B78 /* UILoadableView.swift */; };
+		A99ABBC61E38858900821B78 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBA01E38858900821B78 /* Array+Extensions.swift */; };
+		A99ABBC71E38858900821B78 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBA21E38858900821B78 /* UIColorExtension.swift */; };
+		A99ABBC81E38858900821B78 /* AbstractDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBA41E38858900821B78 /* AbstractDataSource.swift */; };
+		A99ABBC91E38858900821B78 /* UITableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBA61E38858900821B78 /* UITableViewCells.swift */; };
+		A99ABBCA1E38858900821B78 /* UITableView+Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBA71E38858900821B78 /* UITableView+Misc.swift */; };
+		A99ABBCB1E38858900821B78 /* UITableView+rxHeights.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBA91E38858900821B78 /* UITableView+rxHeights.swift */; };
+		A99ABBCC1E38858900821B78 /* UITableView+ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBAA1E38858900821B78 /* UITableView+ObservableArray.swift */; };
+		A99ABBCD1E38858900821B78 /* Disposables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBAC1E38858900821B78 /* Disposables.swift */; };
+		A99ABBCE1E38858900821B78 /* UIRxView+Bindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBAD1E38858900821B78 /* UIRxView+Bindings.swift */; };
+		A99ABBCF1E38858900821B78 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBAE1E38858900821B78 /* UIView+Rx.swift */; };
+		A99ABBD01E38858900821B78 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBAF1E38858900821B78 /* UIViewController+Rx.swift */; };
+		A99ABBD11E38858900821B78 /* UIViewController+Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBB11E38858900821B78 /* UIViewController+Activities.swift */; };
+		A99ABBD21E38858900821B78 /* AppRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBB41E38858900821B78 /* AppRouting.swift */; };
+		A99ABBD31E38858900821B78 /* TableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBB61E38858900821B78 /* TableComponent.swift */; };
+		A99ABBD41E38858900821B78 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBB71E38858900821B78 /* TableViewModel.swift */; };
+		A99ABBD51E38858900821B78 /* DefaultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBB81E38858900821B78 /* DefaultTableCell.swift */; };
+		A99ABBD61E38858900821B78 /* AuthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBBA1E38858900821B78 /* AuthComponent.swift */; };
+		A99ABBD71E38858900821B78 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBBB1E38858900821B78 /* AuthViewModel.swift */; };
+		A99ABBD81E38858900821B78 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBBD1E38858900821B78 /* Component.swift */; };
+		A99ABBD91E38858900821B78 /* RxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBBE1E38858900821B78 /* RxViewModel.swift */; };
+		A99ABBDA1E38858900821B78 /* UIRxComponentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBBF1E38858900821B78 /* UIRxComponentsViewController.swift */; };
+		A99ABBDB1E38858900821B78 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBC21E38858900821B78 /* AuthService.swift */; };
+		A99ABBDC1E38858900821B78 /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBC31E38858900821B78 /* ServiceContainer.swift */; };
+		A99ABBDE1E38AD8400821B78 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABBDD1E38AD8400821B78 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8733EEACD8C6CF7AFE83E6D5 /* Pods-mvvm_netoptica.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm_netoptica.release.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm_netoptica/Pods-mvvm_netoptica.release.xcconfig"; sourceTree = "<group>"; };
 		A99ABB801E38653B00821B78 /* mvvm_netoptica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvm_netoptica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99ABB831E38653B00821B78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A99ABB851E38653B00821B78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A99ABB881E38653B00821B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A99ABB8A1E38653B00821B78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A99ABB8D1E38653B00821B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A99ABB8F1E38653B00821B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A99ABB9A1E38853900821B78 /* NOTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NOTextField.swift; sourceTree = "<group>"; };
+		A99ABB9B1E38853900821B78 /* NOTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NOTextField.xib; sourceTree = "<group>"; };
+		A99ABB9E1E38854C00821B78 /* UILoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILoadableView.swift; sourceTree = "<group>"; };
+		A99ABBA01E38858900821B78 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		A99ABBA21E38858900821B78 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		A99ABBA41E38858900821B78 /* AbstractDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDataSource.swift; sourceTree = "<group>"; };
+		A99ABBA61E38858900821B78 /* UITableViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCells.swift; sourceTree = "<group>"; };
+		A99ABBA71E38858900821B78 /* UITableView+Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Misc.swift"; sourceTree = "<group>"; };
+		A99ABBA91E38858900821B78 /* UITableView+rxHeights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+rxHeights.swift"; sourceTree = "<group>"; };
+		A99ABBAA1E38858900821B78 /* UITableView+ObservableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+ObservableArray.swift"; path = "../UITableView+ObservableArray.swift"; sourceTree = "<group>"; };
+		A99ABBAC1E38858900821B78 /* Disposables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposables.swift; sourceTree = "<group>"; };
+		A99ABBAD1E38858900821B78 /* UIRxView+Bindings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRxView+Bindings.swift"; sourceTree = "<group>"; };
+		A99ABBAE1E38858900821B78 /* UIView+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
+		A99ABBAF1E38858900821B78 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		A99ABBB11E38858900821B78 /* UIViewController+Activities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Activities.swift"; sourceTree = "<group>"; };
+		A99ABBB41E38858900821B78 /* AppRouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouting.swift; sourceTree = "<group>"; };
+		A99ABBB61E38858900821B78 /* TableComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableComponent.swift; sourceTree = "<group>"; };
+		A99ABBB71E38858900821B78 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		A99ABBB81E38858900821B78 /* DefaultTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableCell.swift; sourceTree = "<group>"; };
+		A99ABBBA1E38858900821B78 /* AuthComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthComponent.swift; sourceTree = "<group>"; };
+		A99ABBBB1E38858900821B78 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		A99ABBBD1E38858900821B78 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		A99ABBBE1E38858900821B78 /* RxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewModel.swift; sourceTree = "<group>"; };
+		A99ABBBF1E38858900821B78 /* UIRxComponentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRxComponentsViewController.swift; sourceTree = "<group>"; };
+		A99ABBC21E38858900821B78 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A99ABBC31E38858900821B78 /* ServiceContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
+		A99ABBDD1E38AD8400821B78 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BA5055D6082DF9056498A7F1 /* Pods-mvvm_netoptica.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm_netoptica.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm_netoptica/Pods-mvvm_netoptica.debug.xcconfig"; sourceTree = "<group>"; };
 		D3B712E8C069A3CD7FBD19D6 /* Pods_mvvm_netoptica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm_netoptica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,14 +130,179 @@
 		A99ABB821E38653B00821B78 /* mvvm_netoptica */ = {
 			isa = PBXGroup;
 			children = (
+				A99ABBB31E38858900821B78 /* Extensions */,
+				A99ABBC11E38858900821B78 /* MVVM */,
+				A99ABBC51E38858900821B78 /* Services */,
+				A99ABB981E38852500821B78 /* Views */,
 				A99ABB831E38653B00821B78 /* AppDelegate.swift */,
-				A99ABB851E38653B00821B78 /* ViewController.swift */,
 				A99ABB871E38653B00821B78 /* Main.storyboard */,
 				A99ABB8A1E38653B00821B78 /* Assets.xcassets */,
 				A99ABB8C1E38653B00821B78 /* LaunchScreen.storyboard */,
 				A99ABB8F1E38653B00821B78 /* Info.plist */,
 			);
 			path = mvvm_netoptica;
+			sourceTree = "<group>";
+		};
+		A99ABB981E38852500821B78 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABB9E1E38854C00821B78 /* UILoadableView.swift */,
+				A99ABB991E38853900821B78 /* NOTextFeild */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A99ABB991E38853900821B78 /* NOTextFeild */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABB9A1E38853900821B78 /* NOTextField.swift */,
+				A99ABB9B1E38853900821B78 /* NOTextField.xib */,
+			);
+			path = NOTextFeild;
+			sourceTree = "<group>";
+		};
+		A99ABBA11E38858900821B78 /* Swift types */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBA01E38858900821B78 /* Array+Extensions.swift */,
+			);
+			path = "Swift types";
+			sourceTree = "<group>";
+		};
+		A99ABBA31E38858900821B78 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBA21E38858900821B78 /* UIColorExtension.swift */,
+				A99ABBDD1E38AD8400821B78 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		A99ABBA51E38858900821B78 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBA41E38858900821B78 /* AbstractDataSource.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A99ABBA81E38858900821B78 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBA51E38858900821B78 /* Delegates */,
+				A99ABBA61E38858900821B78 /* UITableViewCells.swift */,
+				A99ABBA71E38858900821B78 /* UITableView+Misc.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		A99ABBAB1E38858900821B78 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBA91E38858900821B78 /* UITableView+rxHeights.swift */,
+				A99ABBAA1E38858900821B78 /* UITableView+ObservableArray.swift */,
+			);
+			path = Cocoa;
+			sourceTree = "<group>";
+		};
+		A99ABBB01E38858900821B78 /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBAB1E38858900821B78 /* Cocoa */,
+				A99ABBAC1E38858900821B78 /* Disposables.swift */,
+				A99ABBAD1E38858900821B78 /* UIRxView+Bindings.swift */,
+				A99ABBAE1E38858900821B78 /* UIView+Rx.swift */,
+				A99ABBAF1E38858900821B78 /* UIViewController+Rx.swift */,
+			);
+			path = Reactive;
+			sourceTree = "<group>";
+		};
+		A99ABBB21E38858900821B78 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBB11E38858900821B78 /* UIViewController+Activities.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A99ABBB31E38858900821B78 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBA11E38858900821B78 /* Swift types */,
+				A99ABBA31E38858900821B78 /* Colors */,
+				A99ABBA81E38858900821B78 /* TableView */,
+				A99ABBB01E38858900821B78 /* Reactive */,
+				A99ABBB21E38858900821B78 /* ViewController */,
+			);
+			name = Extensions;
+			path = ../mvvm_components/Extensions;
+			sourceTree = "<group>";
+		};
+		A99ABBB51E38858900821B78 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBB41E38858900821B78 /* AppRouting.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A99ABBB91E38858900821B78 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBB61E38858900821B78 /* TableComponent.swift */,
+				A99ABBB71E38858900821B78 /* TableViewModel.swift */,
+				A99ABBB81E38858900821B78 /* DefaultTableCell.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		A99ABBBC1E38858900821B78 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBBA1E38858900821B78 /* AuthComponent.swift */,
+				A99ABBBB1E38858900821B78 /* AuthViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		A99ABBC01E38858900821B78 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBBD1E38858900821B78 /* Component.swift */,
+				A99ABBBE1E38858900821B78 /* RxViewModel.swift */,
+				A99ABBBF1E38858900821B78 /* UIRxComponentsViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A99ABBC11E38858900821B78 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBB51E38858900821B78 /* Controllers */,
+				A99ABBB91E38858900821B78 /* Table */,
+				A99ABBBC1E38858900821B78 /* Auth */,
+				A99ABBC01E38858900821B78 /* Base */,
+			);
+			name = MVVM;
+			path = ../mvvm_components/MVVM;
+			sourceTree = "<group>";
+		};
+		A99ABBC41E38858900821B78 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBC21E38858900821B78 /* AuthService.swift */,
+				A99ABBC31E38858900821B78 /* ServiceContainer.swift */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		A99ABBC51E38858900821B78 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABBC41E38858900821B78 /* Sample */,
+			);
+			name = Services;
+			path = ../mvvm_components/Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +369,7 @@
 			files = (
 				A99ABB8E1E38653B00821B78 /* LaunchScreen.storyboard in Resources */,
 				A99ABB8B1E38653B00821B78 /* Assets.xcassets in Resources */,
+				A99ABB9D1E38853900821B78 /* NOTextField.xib in Resources */,
 				A99ABB891E38653B00821B78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,8 +429,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A99ABB861E38653B00821B78 /* ViewController.swift in Sources */,
+				A99ABB9F1E38854C00821B78 /* UILoadableView.swift in Sources */,
+				A99ABBCA1E38858900821B78 /* UITableView+Misc.swift in Sources */,
+				A99ABBCE1E38858900821B78 /* UIRxView+Bindings.swift in Sources */,
+				A99ABBDC1E38858900821B78 /* ServiceContainer.swift in Sources */,
+				A99ABBD61E38858900821B78 /* AuthComponent.swift in Sources */,
+				A99ABBD31E38858900821B78 /* TableComponent.swift in Sources */,
+				A99ABBCC1E38858900821B78 /* UITableView+ObservableArray.swift in Sources */,
+				A99ABBD21E38858900821B78 /* AppRouting.swift in Sources */,
+				A99ABBDB1E38858900821B78 /* AuthService.swift in Sources */,
+				A99ABB9C1E38853900821B78 /* NOTextField.swift in Sources */,
+				A99ABBDE1E38AD8400821B78 /* Colors.swift in Sources */,
+				A99ABBC81E38858900821B78 /* AbstractDataSource.swift in Sources */,
+				A99ABBD01E38858900821B78 /* UIViewController+Rx.swift in Sources */,
+				A99ABBD51E38858900821B78 /* DefaultTableCell.swift in Sources */,
+				A99ABBCD1E38858900821B78 /* Disposables.swift in Sources */,
+				A99ABBC71E38858900821B78 /* UIColorExtension.swift in Sources */,
+				A99ABBD11E38858900821B78 /* UIViewController+Activities.swift in Sources */,
+				A99ABBCB1E38858900821B78 /* UITableView+rxHeights.swift in Sources */,
+				A99ABBD81E38858900821B78 /* Component.swift in Sources */,
+				A99ABBC91E38858900821B78 /* UITableViewCells.swift in Sources */,
 				A99ABB841E38653B00821B78 /* AppDelegate.swift in Sources */,
+				A99ABBDA1E38858900821B78 /* UIRxComponentsViewController.swift in Sources */,
+				A99ABBD71E38858900821B78 /* AuthViewModel.swift in Sources */,
+				A99ABBD41E38858900821B78 /* TableViewModel.swift in Sources */,
+				A99ABBC61E38858900821B78 /* Array+Extensions.swift in Sources */,
+				A99ABBCF1E38858900821B78 /* UIView+Rx.swift in Sources */,
+				A99ABBD91E38858900821B78 /* RxViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +619,7 @@
 				A99ABB941E38653B00821B78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
