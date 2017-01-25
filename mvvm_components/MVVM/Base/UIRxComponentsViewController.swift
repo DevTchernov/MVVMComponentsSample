@@ -18,8 +18,14 @@ class UIRxComponentsViewController: UIRxViewController {
       component.setup(with: initialObject)
     }
   }
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
     (segue.destination as? UIRxComponentsViewController)?.initialObject = sender
+  }
+  
+  func setup(with object: Any?) {
+    self.initialObject = object
+    self.loadViewIfNeeded()
   }
 }

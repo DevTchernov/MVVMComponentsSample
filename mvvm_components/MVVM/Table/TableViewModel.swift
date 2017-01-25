@@ -31,15 +31,7 @@ class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
       switch(cellAction) {
       case .Select:
         let item = self.items[index]
-        
-        switch(item.type) {
-        case .Default:
-          self.currentState.value = .SelectedDefault(item.data)
-          break
-        case .Extra:
-          self.currentState.value = .SelectedExtra(item.data)
-          break
-        }
+        self.currentState.value = .Selected(item.data, item.type)
         
         //сказать каким-нибудь сервисам?
         break
@@ -59,8 +51,7 @@ class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
     case Initial
     case Default
     case Loading
-    case SelectedDefault(String)
-    case SelectedExtra(String)
+    case Selected(String, ElementType)
   }
   private var currentState = Variable<State>(.Initial)
   var observeState: Observable<State> { get { return self.currentState.asObservable() } }

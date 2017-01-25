@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:mvvm_netoptica.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:mvvm_components.xcodeproj">
    </FileRef>
    <FileRef

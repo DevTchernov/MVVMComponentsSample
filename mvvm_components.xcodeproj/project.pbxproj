@@ -18,6 +18,7 @@
 		A93E52E21E2DF797006A0C3F /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E52E11E2DF797006A0C3F /* Array+Extensions.swift */; };
 		A942E8251E2D039200589366 /* UITableView+Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A942E8241E2D039200589366 /* UITableView+Misc.swift */; };
 		A942E8281E2D03EA00589366 /* AbstractDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A942E8271E2D03EA00589366 /* AbstractDataSource.swift */; };
+		A99ABB971E38800000821B78 /* AppRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB961E38800000821B78 /* AppRouting.swift */; };
 		A9A7FBDB1E23B99B00FA9405 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A7FBDA1E23B99B00FA9405 /* AppDelegate.swift */; };
 		A9A7FBDD1E23B99B00FA9405 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A7FBDC1E23B99B00FA9405 /* AuthViewController.swift */; };
 		A9A7FBE01E23B99B00FA9405 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9A7FBDE1E23B99B00FA9405 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		A93E52E11E2DF797006A0C3F /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		A942E8241E2D039200589366 /* UITableView+Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Misc.swift"; sourceTree = "<group>"; };
 		A942E8271E2D03EA00589366 /* AbstractDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDataSource.swift; sourceTree = "<group>"; };
+		A99ABB961E38800000821B78 /* AppRouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouting.swift; sourceTree = "<group>"; };
 		A9A7FBD71E23B99B00FA9405 /* mvvm_components.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvm_components.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A7FBDA1E23B99B00FA9405 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9A7FBDC1E23B99B00FA9405 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewController.swift; path = ../AuthViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +93,6 @@
 		A91E4D671E28B59400B26DD3 /* UIUtils */ = {
 			isa = PBXGroup;
 			children = (
-				A942E8231E2D034600589366 /* New Group */,
 				A91E4D6B1E28B5E600B26DD3 /* UIView+LoadFromNib.swift */,
 			);
 			path = UIUtils;
@@ -141,19 +142,20 @@
 			path = "Swift types";
 			sourceTree = "<group>";
 		};
-		A942E8231E2D034600589366 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
 		A942E8261E2D03BA00589366 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				A942E8271E2D03EA00589366 /* AbstractDataSource.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A99ABB951E387FE300821B78 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABB961E38800000821B78 /* AppRouting.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A9A7FBCE1E23B99B00FA9405 = {
@@ -237,6 +239,7 @@
 		A9FA89431E24BBCB008B57DF /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				A99ABB951E387FE300821B78 /* Controllers */,
 				A9F7A0531E2643E300B9B1A0 /* Table */,
 				A9FA894B1E24BCED008B57DF /* Auth */,
 				A9FA89481E24BC35008B57DF /* Base */,
@@ -427,6 +430,7 @@
 				A9F7A0571E26443400B9B1A0 /* TableViewModel.swift in Sources */,
 				A9F7A0551E26442800B9B1A0 /* TableComponent.swift in Sources */,
 				A9FA89411E24BB5B008B57DF /* UIView+Rx.swift in Sources */,
+				A99ABB971E38800000821B78 /* AppRouting.swift in Sources */,
 				A9FA893B1E24B975008B57DF /* UIViewController+Rx.swift in Sources */,
 				A93E52E21E2DF797006A0C3F /* Array+Extensions.swift in Sources */,
 				A942E8251E2D039200589366 /* UITableView+Misc.swift in Sources */,

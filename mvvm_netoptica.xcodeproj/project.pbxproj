@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		086C346D9645D7FC6705868D /* Pods_mvvm_netoptica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B712E8C069A3CD7FBD19D6 /* Pods_mvvm_netoptica.framework */; };
+		A99ABB841E38653B00821B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB831E38653B00821B78 /* AppDelegate.swift */; };
+		A99ABB861E38653B00821B78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB851E38653B00821B78 /* ViewController.swift */; };
+		A99ABB891E38653B00821B78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99ABB871E38653B00821B78 /* Main.storyboard */; };
+		A99ABB8B1E38653B00821B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99ABB8A1E38653B00821B78 /* Assets.xcassets */; };
+		A99ABB8E1E38653B00821B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99ABB8C1E38653B00821B78 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8733EEACD8C6CF7AFE83E6D5 /* Pods-mvvm_netoptica.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm_netoptica.release.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm_netoptica/Pods-mvvm_netoptica.release.xcconfig"; sourceTree = "<group>"; };
+		A99ABB801E38653B00821B78 /* mvvm_netoptica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvm_netoptica.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A99ABB831E38653B00821B78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A99ABB851E38653B00821B78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A99ABB881E38653B00821B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A99ABB8A1E38653B00821B78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A99ABB8D1E38653B00821B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A99ABB8F1E38653B00821B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA5055D6082DF9056498A7F1 /* Pods-mvvm_netoptica.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm_netoptica.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mvvm_netoptica/Pods-mvvm_netoptica.debug.xcconfig"; sourceTree = "<group>"; };
+		D3B712E8C069A3CD7FBD19D6 /* Pods_mvvm_netoptica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm_netoptica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A99ABB7D1E38653B00821B78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				086C346D9645D7FC6705868D /* Pods_mvvm_netoptica.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D51D5BC0F733F3E9BE4AE55 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA5055D6082DF9056498A7F1 /* Pods-mvvm_netoptica.debug.xcconfig */,
+				8733EEACD8C6CF7AFE83E6D5 /* Pods-mvvm_netoptica.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2D5BFCD1C652D0E85C71659F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3B712E8C069A3CD7FBD19D6 /* Pods_mvvm_netoptica.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A99ABB771E38653A00821B78 = {
+			isa = PBXGroup;
+			children = (
+				A99ABB821E38653B00821B78 /* mvvm_netoptica */,
+				A99ABB811E38653B00821B78 /* Products */,
+				0D51D5BC0F733F3E9BE4AE55 /* Pods */,
+				2D5BFCD1C652D0E85C71659F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A99ABB811E38653B00821B78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABB801E38653B00821B78 /* mvvm_netoptica.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A99ABB821E38653B00821B78 /* mvvm_netoptica */ = {
+			isa = PBXGroup;
+			children = (
+				A99ABB831E38653B00821B78 /* AppDelegate.swift */,
+				A99ABB851E38653B00821B78 /* ViewController.swift */,
+				A99ABB871E38653B00821B78 /* Main.storyboard */,
+				A99ABB8A1E38653B00821B78 /* Assets.xcassets */,
+				A99ABB8C1E38653B00821B78 /* LaunchScreen.storyboard */,
+				A99ABB8F1E38653B00821B78 /* Info.plist */,
+			);
+			path = mvvm_netoptica;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A99ABB7F1E38653B00821B78 /* mvvm_netoptica */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A99ABB921E38653B00821B78 /* Build configuration list for PBXNativeTarget "mvvm_netoptica" */;
+			buildPhases = (
+				0EC87E5A8DCDDF453D82993D /* [CP] Check Pods Manifest.lock */,
+				A99ABB7C1E38653B00821B78 /* Sources */,
+				A99ABB7D1E38653B00821B78 /* Frameworks */,
+				A99ABB7E1E38653B00821B78 /* Resources */,
+				FBF7B1A751BEE546A677D174 /* [CP] Embed Pods Frameworks */,
+				03786F89EA69A53055043724 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mvvm_netoptica;
+			productName = mvvm_netoptica;
+			productReference = A99ABB801E38653B00821B78 /* mvvm_netoptica.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A99ABB781E38653A00821B78 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Andrey Chernov";
+				TargetAttributes = {
+					A99ABB7F1E38653B00821B78 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A99ABB7B1E38653B00821B78 /* Build configuration list for PBXProject "mvvm_netoptica" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A99ABB771E38653A00821B78;
+			productRefGroup = A99ABB811E38653B00821B78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A99ABB7F1E38653B00821B78 /* mvvm_netoptica */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A99ABB7E1E38653B00821B78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99ABB8E1E38653B00821B78 /* LaunchScreen.storyboard in Resources */,
+				A99ABB8B1E38653B00821B78 /* Assets.xcassets in Resources */,
+				A99ABB891E38653B00821B78 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03786F89EA69A53055043724 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mvvm_netoptica/Pods-mvvm_netoptica-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0EC87E5A8DCDDF453D82993D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FBF7B1A751BEE546A677D174 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mvvm_netoptica/Pods-mvvm_netoptica-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A99ABB7C1E38653B00821B78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99ABB861E38653B00821B78 /* ViewController.swift in Sources */,
+				A99ABB841E38653B00821B78 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A99ABB871E38653B00821B78 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A99ABB881E38653B00821B78 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A99ABB8C1E38653B00821B78 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A99ABB8D1E38653B00821B78 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A99ABB901E38653B00821B78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A99ABB911E38653B00821B78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A99ABB931E38653B00821B78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA5055D6082DF9056498A7F1 /* Pods-mvvm_netoptica.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = mvvm_netoptica/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icerockdev.mvvm-netoptica";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A99ABB941E38653B00821B78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8733EEACD8C6CF7AFE83E6D5 /* Pods-mvvm_netoptica.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = mvvm_netoptica/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icerockdev.mvvm-netoptica";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A99ABB7B1E38653B00821B78 /* Build configuration list for PBXProject "mvvm_netoptica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A99ABB901E38653B00821B78 /* Debug */,
+				A99ABB911E38653B00821B78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A99ABB921E38653B00821B78 /* Build configuration list for PBXNativeTarget "mvvm_netoptica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A99ABB931E38653B00821B78 /* Debug */,
+				A99ABB941E38653B00821B78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A99ABB781E38653A00821B78 /* Project object */;
+}
