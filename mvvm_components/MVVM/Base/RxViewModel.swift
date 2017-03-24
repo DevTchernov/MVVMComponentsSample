@@ -23,16 +23,25 @@ class RxViewModel: NSObject, DisposableContainer {
   }
 }
 
+/*
+ * Имеет состояние
+ */
 protocol StateViewModel: class {
   associatedtype ModelState
   var observeState: Observable<ModelState> { get }
 }
 
+/*
+ * Может принимать действия
+ */
 protocol ActionViewModel: class {
   associatedtype ModelAction
   func accept(action: ModelAction)
 }
 
+/*
+ * Может подвязывать поток действий
+ */
 extension ActionViewModel where Self:RxViewModel {
   func bindActions(from: Observable<ModelAction>?) {
     guard let input = from else { return }

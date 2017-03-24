@@ -25,7 +25,6 @@ class UIAbstractTableSource<CellType : FillableCellProtocol & ActionCellProtocol
   //MARK: - Types
   typealias CellItem = (model: Element, config: CellConfig)
   
-  
   //MARK: - Items, load
   var items:[CellItem] = []
   
@@ -114,6 +113,5 @@ class _AbstractStubDelegate: NSObject, UITableViewDataSource, UITableViewDelegat
   }
   
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    
   }
 }

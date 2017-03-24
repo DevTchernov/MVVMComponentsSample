@@ -16,6 +16,7 @@ class AuthViewModel: RxViewModel, ActionViewModel, StateViewModel {
   
   //MARK: - State
   typealias ModelState = State
+  
   enum State {
     case Initial
     case ValidationChanged(DataValidationFlags)
@@ -35,6 +36,13 @@ class AuthViewModel: RxViewModel, ActionViewModel, StateViewModel {
     }
   }
   
+  enum Mode {
+    case SignIn
+    case SignUp
+  }
+  
+  private var currentMode: Mode = .SignIn
+  
   private var currentState = Variable<State>(.Initial)
   var observeState: Observable<State> { get { return self.currentState.asObservable() } }
 
@@ -42,28 +50,42 @@ class AuthViewModel: RxViewModel, ActionViewModel, StateViewModel {
   typealias ModelAction = Action
   enum Action {
     case ChangeData(DataType)
-    case SignIn
-    case SignUp
+    case ChangeMode(Mode)
+    case Login
   }
   
   func accept(action: Action) {
     switch(action) {
-    case .SignIn:
+    case .ChangeMode(let mode):
+      self.currentMode = mode
+      break
+    case .Login:
       self.currentState.value = .Loading
-      self.loginAction()
+      switch (self.currentMode) {
+      case .SignIn:
+        self.loginAction()
+        break
+      case .SignUp:
+        //unsopported?
+        break
+      }
+      
       break
     case .ChangeData(let dataType):
       let valid = dataIsValid(data: dataType)
       var validationFlag = DataValidationFlags.NonValid
       switch (dataType) {
       case .Username(let text):
-        username.value = text ?? ""
+        username = text ?? ""
         validationFlag = .Username
         break
       case .Password(let text):
-        password.value = text ?? ""
+        password = text ?? ""
         validationFlag = .Password
         break
+      case .RepeatPassword(let text):
+        repassword = text ?? ""
+        validationFlag = .RepeatPassword
       }
       
       if valid {
@@ -72,15 +94,12 @@ class AuthViewModel: RxViewModel, ActionViewModel, StateViewModel {
         self.currentValidation.remove(validationFlag)
       }
       break
-    case .SignUp:
-      //unsupported
-      break
     }
   }
   
   func loginAction() {
     self.observeLoading(
-      self.services.authService.login(withUser: username.value, andPassword: password.value),
+      self.services.authService.login(withUser: username, andPassword: password),
       onNext: nil,
       onError: { error in
         self.currentState.value = .Error(error)
@@ -95,25 +114,30 @@ class AuthViewModel: RxViewModel, ActionViewModel, StateViewModel {
   enum DataType {
     case Username(String?)
     case Password(String?)
+    case RepeatPassword(String?)
   }
   
-  private var username = Variable<String>("")
-  private var password = Variable<String>("")
+  private var username: String = ""
+  private var password: String = ""
+  private var repassword: String = ""
   
   //MARK: - Observables
-  func observeData() -> Observable<DataType> { //Если хотим менять значения извне
-    return Observable.of(
-      username.asObservable().map{ DataType.Username($0) },
-      password.asObservable().map{ DataType.Password($0) }).merge()
+  func observeData() -> Observable<DataType> {
+    //Ничего не можем вернуть (возвращали если бфло бы, например, автозаполнение предыдущим логином)
+    return Observable.empty()
   }
   
   //MARK: - Validation
-  struct DataValidationFlags: OptionSet {
+  struct DataValidationFlags: OptionSet, Hashable {
     let rawValue: Int
     static let NonValid = DataValidationFlags(rawValue: 0)
     static let Username = DataValidationFlags(rawValue: 1)
     static let Password = DataValidationFlags(rawValue: 2)
-    static let Valid: DataValidationFlags = [.Username, .Password]
+    static let RepeatPassword = DataValidationFlags(rawValue: 4)
+    static let Valid: DataValidationFlags = [.Username, .Password, RepeatPassword]
+    var hashValue: Int {
+      return rawValue
+    }
   }
   
   private var currentValidation: DataValidationFlags = .NonValid {
@@ -124,11 +148,22 @@ class AuthViewModel: RxViewModel, ActionViewModel, StateViewModel {
 
   func dataIsValid(data: DataType) -> Bool {
     switch (data) {
-    case .Password(let text):
-        return (text?.characters.count ?? 0) > 7
     case .Username(let text):
         return (text?.characters.count ?? 0) > 11
+    case .Password(let text):
+      switch currentMode {
+      case .SignUp:
+        return passIsValid(password: text) && (repassword == "" ? true : text == self.repassword)
+      case .SignIn:
+        return true //try to login with any password
+      }
+    case .RepeatPassword(let text):
+      return passIsValid(password: text) && text == self.password
     }
+  }
+  
+  private func passIsValid(password: String?) -> Bool {
+    return (password?.characters.count ?? 0) > 7
   }
   
 }

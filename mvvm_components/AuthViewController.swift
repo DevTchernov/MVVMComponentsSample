@@ -39,7 +39,4 @@ class AuthViewController: UIRxComponentsViewController {
         }
     }, onError: nil, onCompleted: nil)
   }
-  
-  
-  
 }
