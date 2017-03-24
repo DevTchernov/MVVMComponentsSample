@@ -12,7 +12,8 @@ import RxCocoa
 import ObservableArray_RxSwift
 
 class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
-  //MARK: Actions
+  
+  // MARK: Actions
   typealias ModelAction = Actions
   enum Actions {
     enum Cell {
@@ -24,16 +25,13 @@ class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
   }
   
   func accept(action: ModelAction) {
-    //let index = action.index
-    //let action = action.action //o_O
     switch(action) {
     case .CellAction(let cellAction, let index):
       switch(cellAction) {
       case .Select:
         let item = self.items[index]
         self.currentState.value = .Selected(item.data, item.type)
-        
-        //сказать каким-нибудь сервисам?
+        //сказать каким-нибудь сервисам что ячейка выбрана?
         break
       case .SwipeLeft:  //Правильнее было бы назвать действие как-то иначе (Delete) а вот уже на ячейке решать как оно реализовано
         self.items.remove(at: index)
@@ -45,7 +43,7 @@ class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
       break
     }
   }
-  //MARK: State
+  // MARK: State
   typealias ModelState = State
   enum State {
     case Initial
@@ -55,8 +53,8 @@ class TableViewModel: RxViewModel, ActionViewModel, StateViewModel {
   }
   private var currentState = Variable<State>(.Initial)
   var observeState: Observable<State> { get { return self.currentState.asObservable() } }
-  //MARK: Data
-
+  
+  // MARK: Data
   enum ElementType {
     case Default
     case Extra

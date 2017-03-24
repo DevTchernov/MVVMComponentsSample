@@ -48,7 +48,7 @@ class DefaultTableVC: UIRxComponentsViewController {
   }
   
   //MARK: - Routing
-  enum Routing {
+  struct Routing {
     static let ToDefault = AppRouter.NavigationTypes.Segue(withID: "defaultToDefault")
     static let ToExtra = AppRouter.NavigationTypes.Instantiate(withID: "DefaultTableVC_ID", andType: .Push)
   }  

@@ -12,7 +12,6 @@ import RxCocoa
 import ObservableArray_RxSwift
 import Diff
 
-
 /*
  Базовый компонент для таблицы
  */
